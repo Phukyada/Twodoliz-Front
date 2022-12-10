@@ -9,9 +9,11 @@ function CompleteTask() {
         <Header />
       </div>
 
-      
-        <a>completeTaskkkk</a>
-      
+      <div className="bgBlue">
+        
+          <a>completeTaskkkk</a>
+        
+      </div>
     </div>
   );
 }

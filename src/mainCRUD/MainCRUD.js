@@ -13,8 +13,8 @@ function MainCRUD() {
       <div>
         <Header />
       </div>
-
-      <div>
+     
+      <div className="bgGray">
         <div className="textTODO">
           <h1> My to-do list</h1>
         </div>
