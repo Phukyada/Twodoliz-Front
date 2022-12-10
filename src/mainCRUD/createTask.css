@@ -1,8 +1,6 @@
 .box{
   background-color: #FFFFFF;
-
-  height: 600px ;
-  padding: 300px 300px 300px 300px;
+  padding: 300px 300px 45px 300px;
   border-radius:20px;
   justify-content: center;
   margin-left: 200px;
@@ -10,3 +8,4 @@
   margin-top: 50px;
    box-shadow: 3px 3px 3px #7a7777;
 }
+

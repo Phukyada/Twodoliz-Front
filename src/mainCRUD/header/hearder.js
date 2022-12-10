@@ -41,6 +41,16 @@ function Header() {
               completeTask
             </Link>
           </nav>
+          </Nav>
+          <Nav className="justify-content-end">
+            <img
+              src="https://i.im.ge/2022/12/11/d1j9M0.Screenshot-201.png"
+              style={{
+                height: 55,
+                marginTop: 5,
+              }}
+            ></img>
+          
         </Nav>
       </div>
     </div>
