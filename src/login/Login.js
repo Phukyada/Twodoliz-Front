@@ -1,7 +1,19 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom'
+
 
 function Login() {
-  return <div> this is login</div>;
+  let navigate = useNavigate();
+
+  return (
+    <div>
+      <p>this is login</p>
+      <button onClick={() => navigate(`/mainCRUD`)}>
+        main crud
+      </button>
+    </div>
+  );
+  
 }
 
 export default Login;
