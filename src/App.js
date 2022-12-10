@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./login/Login";
 import Register from "./register/Register";
@@ -12,7 +12,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/mainCRUD" element={<MainCRUD />} />
+        <Route path="/home" element={<MainCRUD />}>
+           <Route path="createTask" element={<p>createTaskRoute</p>} />
+        </Route>
+        
       
       </Routes>
     </BrowserRouter>

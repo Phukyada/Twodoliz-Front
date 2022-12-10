@@ -1,10 +1,22 @@
-App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tabHeader {
+  background-color: #eceac6;
+  height: 64px;
+}
+.textBar {
+  height: 36px;
+  width: 200 px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-decoration: none;
+  color: #363636;
+  font-weight: bold;
+}
+.textTODO {
+  font-family: "Rubik Vinyl", cursive;
+  text-align: center;
+  top: 500px;
+  font-size: 1000px;
+  color: #555555;
+  font-weight: bold;
 }

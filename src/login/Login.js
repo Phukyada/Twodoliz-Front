@@ -8,7 +8,7 @@ function Login() {
   return (
     <div>
       <p>this is login</p>
-      <button onClick={() => navigate(`/mainCRUD`)}>
+      <button onClick={() => navigate('/home')}>
         main crud
       </button>
     </div>
