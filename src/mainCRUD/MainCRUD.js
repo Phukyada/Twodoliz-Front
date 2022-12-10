@@ -11,25 +11,17 @@ function MainCRUD() {
   return (
     <div>
       <div>
-          <Header />
+        <Header />
       </div>
 
       <div>
+        <div className="textTODO">
+          <h1> My to-do list</h1>
+        </div>
+
+        <Link to="/"> Back to login </Link>
+
         
-          <div className="textTODO">
-            <h1> My to-do list</h1>
-          </div>
-
-          <Link to="/"> Back to login </Link>
-        
-
-      <header>
-        <Header />
-      </header>
-
-      <div className="textTODO">
-        <h1> My to-do list</h1>
-
       </div>
     </div>
   );
