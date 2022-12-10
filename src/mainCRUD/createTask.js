@@ -1,8 +1,12 @@
 import React from "react";
-import { Outlet,Link} from "react-router-dom";
 
-function createTask() {
-  return <div> createTask</div>;
+
+function CreateTask() {
+  return (
+    <div>
+     <a>createTaskkk</a>
+    </div>
+  );
 }
 
-export default createTask;
+export default CreateTask;

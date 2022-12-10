@@ -1,17 +1,21 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Nav} from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 
-import "./MainCRUD.css";
+import "./hearder.css";
 
-function MainCRUD() {
+function Header() {
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap"
+    rel="stylesheet"
+  ></link>;
   return (
     <div>
       <div className="tabHeader">
         <Nav>
           <nav>
-            <Link to="/home" className="textBar">
+            <Link to="/login" className="textBar">
               Home
             </Link>
           </nav>
@@ -28,14 +32,8 @@ function MainCRUD() {
           </nav>
         </Nav>
       </div>
-
-      <div className="textTODO" >
-        <h1> My to-do list</h1>
-      </div>
-
-      <Link to="/"> Back to login </Link>
     </div>
   );
 }
 
-export default MainCRUD;
+export default Header;
