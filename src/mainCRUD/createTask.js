@@ -1,10 +1,18 @@
 import React from "react";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 
 function CreateTask() {
   return (
     <div>
-     <a>createTaskkk</a>
+      
+
+      <Container>
+        <a>createTaskkk</a>
+      </Container>
+
+    
     </div>
   );
 }

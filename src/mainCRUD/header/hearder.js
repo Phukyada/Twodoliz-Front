@@ -3,8 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Nav } from "react-bootstrap";
 
-import "./hearder.css";
-
+import "./header.css"
 function Header() {
   <link
     href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap"
@@ -15,7 +14,7 @@ function Header() {
       <div className="tabHeader">
         <Nav>
           <nav>
-            <Link to="/login" className="textBar">
+            <Link to="/home" className="textBar">
               Home
             </Link>
           </nav>
