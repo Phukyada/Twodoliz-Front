@@ -1,29 +1,41 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Nav } from "react-bootstrap";
 
-import "./header.css"
+import "./header.css";
 function Header() {
   <link
     href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap"
     rel="stylesheet"
   ></link>;
+
+  let navigate = useNavigate();
   return (
     <div>
       <div className="tabHeader">
         <Nav>
+          <div class="logo-image">
+            <img
+              src="https://i.im.ge/2022/12/10/dOLxJJ.logo.png"
+              top="10px"
+              width="120px"
+              height="64px"
+            ></img>
+          </div>
+
           <nav>
             <Link to="/home" className="textBar">
-              Home
+              home
             </Link>
           </nav>
+
           <nav>
-            <Link to="createTask" className="textBar">
+            <Link to="/createTask" className="textBar">
               createTask
             </Link>
-            <Outlet />
           </nav>
+
           <nav>
             <Link to="/completeTask" className="textBar">
               completeTask

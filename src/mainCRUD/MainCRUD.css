@@ -20,4 +20,14 @@
   font-size: 1000px;
   color: #555555;
   font-weight: bold;
+  padding-top: 50px;
+}
+
+.box{
+  background-color: #FFFFFF;
+  width: 50 px;
+  height: 600px ;
+  padding: 30px 30px;
+  border-radius:20px;
+  justify-content: center;
 }

@@ -1,17 +1,20 @@
 import React from "react";
-import { BrowserRouter, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Nav } from "react-bootstrap";
-import Login from "./login/Login";
-import Register from "./register/Register";
-import MainCRUD from "./mainCRUD/MainCRUD";
+import Header from "./header/hearder.js";
 
-import "./MainCRUD.css";
-
-function completeTask() {
+function CompleteTask() {
   return (
-   <div></div>
+    <div>
+      <div>
+        <Header />
+      </div>
+
+      
+        <a>completeTaskkkk</a>
+      
+    </div>
   );
 }
 
-export default completeTask;
+
+export default CompleteTask;
