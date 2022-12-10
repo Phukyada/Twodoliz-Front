@@ -31,7 +31,7 @@ const CreateTask = ({ onFormSubmit }) => {
 
       <div className="bgGray">
         <div className="textTODO">
-          <h1> My to-do list</h1>
+          <p> My to-do list</p>
         </div>
 
         <div className="box">

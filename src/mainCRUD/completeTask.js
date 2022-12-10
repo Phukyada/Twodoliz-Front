@@ -9,10 +9,10 @@ function CompleteTask() {
         <Header />
       </div>
 
-      <div className="bgBlue">
-        
-          <a>completeTaskkkk</a>
-        
+      <div className="bgGray">
+        <div className="textTODO">
+          <p> Completed Tasks</p>
+        </div>
       </div>
     </div>
   );

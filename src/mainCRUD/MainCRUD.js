@@ -16,12 +16,8 @@ function MainCRUD() {
      
       <div className="bgGray">
         <div className="textTODO">
-          <h1> My to-do list</h1>
+          <p> My to-do list</p>
         </div>
-
-        <Link to="/"> Back to login </Link>
-
-        
       </div>
     </div>
   );
