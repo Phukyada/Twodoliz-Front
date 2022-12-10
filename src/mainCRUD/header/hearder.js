@@ -9,8 +9,8 @@ function Header() {
     href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap"
     rel="stylesheet"
   ></link>;
-
   let navigate = useNavigate();
+
   return (
     <div>
       <div className="tabHeader">
@@ -41,16 +41,16 @@ function Header() {
               completeTask
             </Link>
           </nav>
-          </Nav>
-          <Nav className="justify-content-end">
-            <img
-              src="https://i.im.ge/2022/12/11/d1j9M0.Screenshot-201.png"
-              style={{
-                height: 55,
-                marginTop: 5,
-              }}
-            ></img>
-          
+
+          <img
+            src="https://i.im.ge/2022/12/11/d1j9M0.Screenshot-201.png"
+            style={{
+              height: 40,
+              marginTop: 15,
+              marginLeft: 725,
+            }}
+            onClick={() => navigate("/")}
+          ></img>
         </Nav>
       </div>
     </div>
