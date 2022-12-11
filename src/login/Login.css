@@ -1,7 +1,3 @@
-/* *{
-    box-sizing: border-box;
-} */
-
 .column{
     /* float: left;
     width: 50%;
@@ -9,12 +5,12 @@
     height: 100%; */
 }
 .col-1{
-    background: green;
-    height: 725px;
+    background: #789DAC;
+    height: 745px;
 }
 .col-2{
-    background: lightblue;
-    height: 725px;
+    background: #8FAFBD;
+    height: 745px;
 }
 
 /* .row::after{
@@ -28,38 +24,61 @@
 }
 
 .username{
-    padding: 10px;
-    background-color: #4CAF50;
+    /* padding: 10px;
+    background-color: #4CAF50; */
     color: #E5E0E0;
-    font-size: medium;
+    font-size: 18px;
     border-style: none;
-    margin-top: 15px;
-    margin-left: 10px;
+    margin-top: 200px;
+    margin-left: 100px;
     /* border-radius: 15rem;
     box-shadow: 10px 10px 36px -10px rgba(0,0,0,0.75);
     outline: none;
     text-align: center;
-    box-sizing: none; */
-    
-    
+    box-sizing: none; */   
+}
+
+.userinput{
+    border-radius: 15rem;
+    margin-left: 40px;
+    border: none;
+    box-shadow: 5px 5px 5px -5px rgba(54, 48, 48, 0.75);
+    padding: 10px;
+    width: 40%;
+    color: #424242;
+    font-size: 16px;
 }
 
 .password{
-    /* padding: 10px; */
-    /* background-color: #4CAF50; */
-    /* color: #E5E0E0;
-    font-size: medium;
+    /* padding: 10px;
+    background-color: #4CAF50; */
+    color: #E5E0E0;
+    font-size: 18px;
     border-style: none;
-    margin-left: 1000px; */
-    /* border-radius: 15rem;
-    box-shadow: 10px 10px 36px -10px rgba(0,0,0,0.75);
+    margin-top: 20px;
+    margin-left: 100px;
+    /* border-radius: 5rem;
+    box-shadow: 5px 5px 5px -5px rgba(0,0,0,0.75);
     outline: none;
-    box-sizing: none; */
+    width: 10px;
+    height: 10px; */
+}
+
+.passwordinput{
+    border-radius: 15rem;
+    margin-left: 40px;
+    border: none;
+    box-shadow: 5px 5px 5px -5px rgba(54, 48, 48, 0.75);
+    padding: 10px;
+    width: 40%;
+    color:#424242;
+    font-size: 16px;
 }
 
 .login-bt{
-    /* padding: 40px;
-    margin-left: 1025px; */
+    padding: 40px;
+    margin-top: 20px;
+    margin-left: 200px;
 }
 
 /* const Button = styled.button
@@ -73,10 +92,56 @@
     outline: none;
     box-sizing: none; */
 
-/* &:active{
-    background-color: #8FAFBD;  //เปลี่ยนสีปุ่มเวลาชี้
-} */
-
 .signup-bt{
-    /* margin-left: 900px; */
+    margin-top: 80px;
+    margin-left: 150px;
 }
+
+.button1{
+    background-color: #E8E7CF;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    box-shadow: 5px 5px 5px -5px rgba(54, 48, 48, 0.75);
+    border-radius: 5rem;
+}
+
+.button2{
+    background-color: #E3E19E;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    box-shadow: 5px 5px 5px -5px rgba(54, 48, 48, 0.75);
+    border-radius: 5rem;
+    margin-left: 15px;
+}
+
+a{
+    color:#424242;
+}
+
+button:active{
+    background-color: #f6df5d;
+
+    /* เปลี่ยนสีปุ่มเวลากด */
+}
+
+a:visited {
+    color: #424242;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(236, 113, 36);
+    background-color: transparent;
+    /* text-decoration: underline; */
+  }

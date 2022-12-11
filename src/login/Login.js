@@ -14,29 +14,28 @@ function Login() {
         <Col span={12} className="col-1">
           <div>
             <div className="logo">
-              <ul> Two Du Liz </ul>
-              {/* <img src="" /> */}
+              <img src="https://i.im.ge/2022/12/11/dqez5y.logoo.png" border="0"/>
             </div>
           </div>
         </Col>
         <Col span={12} className="col-2">
           <div className="username">
             <ul> Username </ul>
-            <input type="" />
+            <input type="" className="userinput"/>
           </div>
 
           <div className="password">
             <ul> Password </ul>
-            <input type="password" />
+            <input type="password" className="passwordinput"/>
           </div>
 
           <div className="login-bt">
-            <button><a href="/"> Log in </a></button>
+            <button class="button1"><a href="/"> Log in </a></button>
           </div>
 
           <div className="signup-bt">
-            <div>Don't have an account yet? </div>
-            <button><a href="/register"> Sign up now! </a></button>
+            Don't have an account yet?
+            <button class="button2"><a href="/register"> Sign up now! </a></button>
           </div>
         </Col>
       </Row>
