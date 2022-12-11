@@ -40,8 +40,10 @@ function MainCRUD() {
     console.log(`checked = ${e.target.checked}`);
   };
 
-  const onDelete = (e) => {
-    console.log(`checked = ${e.target.checked}`);
+  const onDelete = async(task_id) => {
+     const res = await axios.delete(`http://localhost:8000/tasks/${task_id}`).then( (res)=>{
+      console.log(res.data)
+    })
   };
 
   const status_color = (status) => {
@@ -132,10 +134,20 @@ function MainCRUD() {
                     {new Date(task.completedAt).toLocaleDateString("en-US")}
                   </Col>
                   <Col span={2} order={6} style={{ marginTop: "3px" }}>
-                    <Button shape="round"   onEdit={onEdit} >edit</Button>
+                    <Button shape="round" onEdit={onEdit}>
+                      edit
+                    </Button>
                   </Col>
                   <Col span={2} order={6} style={{ marginTop: "3px" }}>
-                    <Button shape="round" onDelete={onDelete}>delete</Button>
+                    <img
+                      src="https://i.im.ge/2022/12/12/d7E5I4.Screenshot-203.png"
+                      alt="Screenshot (203)"
+                      style={{ height: 30, marginTop:3}}
+                      onClick={() => {
+                        onDelete(task._id);
+                      }}
+                      delete
+                    ></img>
                   </Col>
                 </Row>
               </div>

@@ -29,9 +29,11 @@ const CreateTask = () => {
       hasCompletedDate: e.datePicker ? true: false
     }
     console.log(data)
-    const res = await axios.post("http://localhost:8000/tasks",data).then( (res)=>{
-      console.log(res.data)
-    })
+    const response = await axios
+      .post("http://localhost:8000/tasks", data)
+      .then((response) => {
+        console.log(response.data);
+      });
   };
 
   
