@@ -3,10 +3,18 @@
 } */
 
 .column{
-    float: left;
+    /* float: left;
     width: 50%;
     padding: 10 px;
-    height: 100%;
+    height: 100%; */
+}
+.col-1{
+    background: green;
+    height: 725px;
+}
+.col-2{
+    background: lightblue;
+    height: 725px;
 }
 
 /* .row::after{
@@ -21,28 +29,28 @@
 
 .username{
     padding: 10px;
-    /* background-color: #4CAF50; */
+    background-color: #4CAF50;
     color: #E5E0E0;
     font-size: medium;
     border-style: none;
-    margin-top: 150px;
-    margin-left: 1000px;
+    margin-top: 15px;
+    margin-left: 10px;
     /* border-radius: 15rem;
     box-shadow: 10px 10px 36px -10px rgba(0,0,0,0.75);
     outline: none;
     text-align: center;
     box-sizing: none; */
-
+    
     
 }
 
 .password{
-    padding: 10px;
+    /* padding: 10px; */
     /* background-color: #4CAF50; */
-    color: #E5E0E0;
+    /* color: #E5E0E0;
     font-size: medium;
     border-style: none;
-    margin-left: 1000px;
+    margin-left: 1000px; */
     /* border-radius: 15rem;
     box-shadow: 10px 10px 36px -10px rgba(0,0,0,0.75);
     outline: none;
@@ -50,8 +58,8 @@
 }
 
 .login-bt{
-    padding: 40px;
-    margin-left: 1025px;
+    /* padding: 40px;
+    margin-left: 1025px; */
 }
 
 /* const Button = styled.button
@@ -70,5 +78,5 @@
 } */
 
 .signup-bt{
-    margin-left: 900px;
+    /* margin-left: 900px; */
 }
