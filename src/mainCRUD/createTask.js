@@ -34,10 +34,7 @@ const CreateTask = () => {
     })
   };
 
-  const handleChange = (e) => {
-    setTaskData({...taskData,[e.target.name]:e.target.value})
-    
-  }
+  
   
 
   return (
@@ -160,7 +157,7 @@ const CreateTask = () => {
 
                 {/* unselect button */}
                 <Radio.Button
-                  value="none"
+                 
                   style={{
                     backgroundColor: "#D99BFF",
                     color: "black",
