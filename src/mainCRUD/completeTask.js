@@ -9,7 +9,7 @@ function CompleteTask() {
         <Header />
       </div>
 
-      <div className="bgGray">
+      <div className="bgBlue">
         <div className="textTODO">
           <p> Completed Tasks</p>
         </div>

@@ -2,27 +2,18 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header/hearder.js";
 import "./createTask.css";
-import { Form, Row, Col, Button, Input, DatePicker} from "antd";
+import { Form, Row, Col, Button, Input, DatePicker, Radio } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import { PlusCircleFilled } from "@ant-design/icons";
 
 const CreateTask = ({ onFormSubmit }) => {
   const [form] = Form.useForm();
 
-  const onFinish = () => {
-    onFormSubmit({
-      title: form.getFieldValue("title"),
-      detail: form.getFieldValue("detail"),
-      completed: false,
-      completedAt: form.getFieldValue("date-picker")
-        ? form.getFieldValue("date-picker").format("YYYY-MM-DD")
-        : null,
-      tag: form.getFieldValue("tag"),
-      hasCompletedDate: form.getFieldValue("date-picker") ? true : false,
-    });
-    console.log("Received values of form: ", form.getFieldValue("title"));
-    form.resetFields();
-  };
+  const onFinish=(e) => {
+    console.log(e)
+  }
+
+  
   return (
     <div>
       <div>
@@ -44,8 +35,8 @@ const CreateTask = ({ onFormSubmit }) => {
             <Row gutter={10}>
               <Col span={12}>
                 <Form.Item
+                  name="title"
                   label="Title"
-                  name={"title"}
                   rules={[
                     { required: true, message: "Please input your title!" },
                   ]}
@@ -59,7 +50,7 @@ const CreateTask = ({ onFormSubmit }) => {
               </Col>
 
               <Col span={12}>
-                <Form.Item label="Deadline" name="date-picker">
+                <Form.Item name="date-picker" label="Deadline">
                   <DatePicker
                     placeholder="select data"
                     rules={[{ required: false }]}
@@ -72,77 +63,89 @@ const CreateTask = ({ onFormSubmit }) => {
             </Row>
 
             <Form.Item name="tag" label="Category : ">
-              <Button
-                type="primary"
-                shape="round"
-                style={{
-                  backgroundColor: "#9DCDE1",
-                  color: "black",
-                  marginLeft: "20px",
-                }}
-              >
-                Activity
-              </Button>
-              <Button
-                type="primary"
-                shape="round"
-                style={{
-                  backgroundColor: "#F8E16B",
-                  color: "black",
-                  marginLeft: "20px",
-                }}
-              >
-                Friend
-              </Button>
-              <Button
-                type="primary"
-                shape="round"
-                style={{
-                  backgroundColor: "#F8C86B",
-                  color: "black",
-                  marginLeft: "20px",
-                }}
-              >
-                Work
-              </Button>
-              <Button
-                type="primary"
-                shape="round"
-                style={{
-                  backgroundColor: "#ECC6CF",
-                  color: "black",
-                  marginLeft: "20px",
-                }}
-              >
-                Love and Family
-              </Button>
-              <Button
-                type="primary"
-                shape="round"
-                style={{
-                  backgroundColor: "#A4D77C",
-                  color: "black",
-                  marginLeft: "20px",
-                }}
-              >
-                Study
-              </Button>
-              <Button
-                type="primary"
-                shape="round"
-                style={{
-                  backgroundColor: "#D99BFF",
-                  color: "black",
-                  marginLeft: "20px",
-                }}
-              >
-                None
-              </Button>
+              {/* button that can deselect */}
+              <Radio.Group buttonStyle="solid" defaultValue="none">
+                <Radio.Button
+                  value="activity"
+                  style={{
+                    backgroundColor: "#9DCDE1",
+                    color: "black",
+                    marginLeft: "10px",
+                    marginRight: "10px",
+                    borderRadius: "20px",
+                  }}
+                >
+                  Activity
+                </Radio.Button>
+                <Radio.Button
+                  value="friend"
+                  style={{
+                    backgroundColor: "#F8E16B",
+                    color: "black",
+                    marginLeft: "10px",
+                    marginRight: "10px",
+                    borderRadius: "20px",
+                  }}
+                >
+                  Friend
+                </Radio.Button>
+                <Radio.Button
+                  value="work"
+                  style={{
+                    backgroundColor: "#F8C86B",
+                    color: "black",
+                    marginLeft: "10px",
+                    marginRight: "10px",
+                    borderRadius: "20px",
+                  }}
+                >
+                  Work
+                </Radio.Button>
+
+                <Radio.Button
+                  value="love and Family"
+                  style={{
+                    backgroundColor: "#ECC6CF",
+                    color: "black",
+                    marginLeft: "10px",
+                    marginRight: "10px",
+                    borderRadius: "20px",
+                  }}
+                >
+                  Love and Family
+                </Radio.Button>
+                <Radio.Button
+                  value="study"
+                  style={{
+                    backgroundColor: "#A4D77C",
+                    color: "black",
+                    marginLeft: "10px",
+                    marginRight: "10px",
+                    borderRadius: "20px",
+                  }}
+                >
+                  Study
+                </Radio.Button>
+
+                {/* unselect button */}
+                <Radio.Button
+                  value="none"
+                  style={{
+                    backgroundColor: "#D99BFF",
+                    color: "black",
+                    marginLeft: "10px",
+                    marginRight: "10px",
+                    borderRadius: "20px",
+                  }}
+                >
+                  None
+                </Radio.Button>
+              </Radio.Group>
             </Form.Item>
 
             <Form.Item
+              name="detail"
               label="Note"
-              name={"detail"}
               rules={[{ required: false }]}
               style={{
                 marginLeft: 70,
@@ -156,9 +159,13 @@ const CreateTask = ({ onFormSubmit }) => {
                 style={{
                   height: 100,
                   width: 500,
+                  resize: "none",
+                  marginTop: 10,
                 }}
                 autoComplete="off"
               />
+            </Form.Item>
+            <Form.Item>
               <Button
                 type="primary"
                 htmlType="submit"
@@ -168,9 +175,10 @@ const CreateTask = ({ onFormSubmit }) => {
                   width: 100,
                   backgroundColor: "#000000",
                   color: "white",
-                  marginLeft: 200,
-                  marginTop: 25,
+                  marginLeft: 325,
+                  marginTop: -600,
                 }}
+                onClick={onFinish}
               >
                 <PlusCircleFilled />
                 Done

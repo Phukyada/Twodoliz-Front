@@ -15,7 +15,7 @@ function Header() {
     <div>
       <div className="tabHeader">
         <Nav>
-          <div class="logo-image">
+          <div className="logo-image">
             <img
               src="https://i.im.ge/2022/12/10/dOLxJJ.logo.png"
               top="10px"
