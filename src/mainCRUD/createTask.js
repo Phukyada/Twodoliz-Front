@@ -154,6 +154,10 @@ const CreateTask = ({ onFormSubmit }) => {
             >
               <TextArea
                 placeholder="details"
+                autoSize={{
+                  minRows: 2,
+                  maxRows: 6,
+                }}
                 showCount={true}
                 maxLength={200}
                 style={{
