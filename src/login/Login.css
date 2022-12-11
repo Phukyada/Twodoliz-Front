@@ -1,0 +1,57 @@
+.logo{
+
+}
+
+.username{
+    padding: 10px;
+    /* background-color: #4CAF50; */
+    color: #E5E0E0;
+    font-size: medium;
+    border-style: none;
+    margin-top: 150px;
+    margin-left: 1000px;
+    /* border-radius: 15rem;
+    box-shadow: 10px 10px 36px -10px rgba(0,0,0,0.75);
+    outline: none;
+    text-align: center;
+    box-sizing: none; */
+
+    
+}
+
+.password{
+    padding: 10px;
+    /* background-color: #4CAF50; */
+    color: #E5E0E0;
+    font-size: medium;
+    border-style: none;
+    margin-left: 1000px;
+    /* border-radius: 15rem;
+    box-shadow: 10px 10px 36px -10px rgba(0,0,0,0.75);
+    outline: none;
+    box-sizing: none; */
+}
+
+.login-bt{
+    padding: 40px;
+    margin-left: 1025px;
+}
+
+/* const Button = styled.button
+    padding: 15px;
+    background-color: #4CAF50;
+    color: #E5E0E0;
+    font-size: medium;
+    border-style: none;
+    border-radius: 15rem;
+    box-shadow: 10px 10px 36px -10px rgba(0,0,0,0.75);
+    outline: none;
+    box-sizing: none; */
+
+/* &:active{
+    background-color: #8FAFBD;  //เปลี่ยนสีปุ่มเวลาชี้
+} */
+
+.signup-bt{
+    margin-left: 900px;
+}
