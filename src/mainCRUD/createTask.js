@@ -1,19 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header/hearder.js";
 import "./createTask.css";
 import { Form, Row, Col, Button, Input, DatePicker, Radio } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import { PlusCircleFilled } from "@ant-design/icons";
+import axios from "axios";
 
-const CreateTask = ({ onFormSubmit }) => {
+const CreateTask = () => {
   const [form] = Form.useForm();
+  const [taskData, setTaskData] = useState({
+    title: '',
+    detail: '',
+    completed: false,
+    completedAt: null ,
+    tag: '',
+    hasCompletedDate: false,
+  });
 
-  const onFinish=(e) => {
-    console.log(e)
+  const onFinish = async(e) => {
+    console.log(e);
+    const data ={
+      title: e.title,
+      detail: e.detail,
+      completed: false,
+      completedAt: null ? taskData.datePicker : null,
+      tag: e.tag,
+      hasCompletedDate: e.datePicker ? true: false
+    }
+    console.log(data)
+    const res = await axios.post("http://localhost:8000/tasks",data).then( (res)=>{
+      console.log(res.data)
+    })
+  };
+
+  const handleChange = (e) => {
+    setTaskData({...taskData,[e.target.name]:e.target.value})
+    
   }
-
   
+
   return (
     <div>
       <div>
@@ -22,7 +48,7 @@ const CreateTask = ({ onFormSubmit }) => {
 
       <div className="bgGray">
         <div className="textTODO">
-          <p> My to-do list</p>
+          <p> Create Task</p>
         </div>
 
         <div className="box">
@@ -36,6 +62,7 @@ const CreateTask = ({ onFormSubmit }) => {
               <Col span={12}>
                 <Form.Item
                   name="title"
+                  value={taskData.title}
                   label="Title"
                   rules={[
                     { required: true, message: "Please input your title!" },
@@ -50,7 +77,11 @@ const CreateTask = ({ onFormSubmit }) => {
               </Col>
 
               <Col span={12}>
-                <Form.Item name="date-picker" label="Deadline">
+                <Form.Item
+                  name="datePicker"
+                  value={taskData.datePicker}
+                  label="Deadline"
+                >
                   <DatePicker
                     placeholder="select data"
                     rules={[{ required: false }]}
@@ -62,7 +93,7 @@ const CreateTask = ({ onFormSubmit }) => {
               </Col>
             </Row>
 
-            <Form.Item name="tag" label="Category : ">
+            <Form.Item name="tag" value={taskData.tag} label="Category : ">
               {/* button that can deselect */}
               <Radio.Group buttonStyle="solid" defaultValue="none">
                 <Radio.Button
@@ -145,6 +176,7 @@ const CreateTask = ({ onFormSubmit }) => {
 
             <Form.Item
               name="detail"
+              value={taskData.detail}
               label="Note"
               rules={[{ required: false }]}
               style={{
