@@ -17,29 +17,38 @@ function Header() {
         <Nav>
           <div className="logo-image">
             <img
-              src="https://i.im.ge/2022/12/10/dOLxJJ.logo.png"
+              src="https://i.im.ge/2022/12/12/dD76CF.image-3.png"
               top="10px"
-              width="120px"
               height="64px"
             ></img>
           </div>
 
           <nav>
-            <Link to="/home" className="textBar">
-              home
-            </Link>
+            <img
+              src="https://i.im.ge/2022/12/12/dDd13q.image.png"
+              alt="image"
+              border="0"
+              style={{ marginTop: 7 }}
+              onClick={() => navigate("/home")}
+            />
           </nav>
 
           <nav>
-            <Link to="/createTask" className="textBar">
-              createTask
-            </Link>
+            <img
+              src="https://i.im.ge/2022/12/12/dDsEPX.image-1.png"
+              border="0"
+              style={{ marginTop: 7 }}
+              onClick={() => navigate("/createTask")}
+            />
           </nav>
 
           <nav>
-            <Link to="/completeTask" className="textBar">
-              completeTask
-            </Link>
+            <img
+              src="https://i.im.ge/2022/12/12/dDadqK.image-2.png"
+              border="0"
+              style={{ marginTop: 7 }}
+              onClick={() => navigate("/completeTask")}
+            />
           </nav>
 
           <img
@@ -47,7 +56,7 @@ function Header() {
             style={{
               height: 40,
               marginTop: 15,
-              marginLeft: 725,
+              marginLeft: 650,
             }}
             onClick={() => navigate("/")}
           ></img>

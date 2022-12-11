@@ -10,34 +10,31 @@ import axios from "axios";
 const CreateTask = () => {
   const [form] = Form.useForm();
   const [taskData, setTaskData] = useState({
-    title: '',
-    detail: '',
+    title: "",
+    detail: "",
     completed: false,
-    completedAt: null ,
-    tag: '',
+    completedAt: null,
+    tag: "",
     hasCompletedDate: false,
   });
 
-  const onFinish = async(e) => {
+  const onFinish = async (e) => {
     console.log(e);
-    const data ={
+    const data = {
       title: e.title,
       detail: e.detail,
       completed: false,
-      completedAt: null ? taskData.datePicker : null,
+      completedAt: e.datePicker ? e.datePicker : null,
       tag: e.tag,
-      hasCompletedDate: e.datePicker ? true: false
-    }
-    console.log(data)
+      hasCompletedDate: e.datePicker ? true : false,
+    };
+    console.log(data);
     const response = await axios
       .post("http://localhost:8000/tasks", data)
       .then((response) => {
         console.log(response.data);
       });
   };
-
-  
-  
 
   return (
     <div>
@@ -159,7 +156,7 @@ const CreateTask = () => {
 
                 {/* unselect button */}
                 <Radio.Button
-                 
+                  value="none"
                   style={{
                     backgroundColor: "#D99BFF",
                     color: "black",
@@ -175,7 +172,7 @@ const CreateTask = () => {
 
             <Form.Item
               name="detail"
-              value={taskData.detail}
+              value="detail"
               label="Note"
               rules={[{ required: false }]}
               style={{
@@ -185,10 +182,6 @@ const CreateTask = () => {
             >
               <TextArea
                 placeholder="details"
-                autoSize={{
-                  minRows: 2,
-                  maxRows: 6,
-                }}
                 showCount={true}
                 maxLength={200}
                 style={{
@@ -210,7 +203,7 @@ const CreateTask = () => {
                   width: 100,
                   backgroundColor: "#000000",
                   color: "white",
-                  marginLeft: 325,
+                  marginLeft: 320,
                   marginTop: -600,
                 }}
                 onClick={onFinish}

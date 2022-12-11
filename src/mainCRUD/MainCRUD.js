@@ -10,6 +10,7 @@ import { Button, Row } from "react-bootstrap";
 
 function MainCRUD() {
   const [toDo, setTodo] = useState([]);
+  const [isCheckTask, setCheckTask] = useState(false);
 
   const getAllTodo = () => {
     const url = "http://localhost:8000/tasks";
@@ -17,6 +18,7 @@ function MainCRUD() {
       .get(url)
       .then((response) => {
         const { status, message, data } = response;
+
         if (status != 200) {
           console.log("error");
         } else {
@@ -32,31 +34,52 @@ function MainCRUD() {
     getAllTodo();
   }, []);
 
-  const onChange = (e) => {
-    console.log(`checked = ${e.target.checked}`);
+  const handleChange = async (e, task_id) => {
+    const checkBox = {
+      title: toDo.title,
+      detail: toDo.detail,
+      completed: e.target.value,
+      completedAt: toDo.datePicker,
+      tag: toDo.tag,
+      hasCompletedDate: toDo.datePicker,
+    };
+
+    const response = await axios
+      .patch(`http://localhost:8000/tasks/${isCheckTask}`, checkBox)
+      .then((res) => {
+        console.log(res.data);
+      });
   };
 
   const onEdit = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
 
-  const onDelete = async(task_id) => {
-     const res = await axios.delete(`http://localhost:8000/tasks/${task_id}`).then( (res)=>{
-      console.log(res.data)
-    })
+  const onDelete = async (task_id) => {
+    const res = await axios
+      .delete(`http://localhost:8000/tasks/${task_id}`)
+      .then((res) => {
+        console.log(res.data);
+      });
   };
 
   const status_color = (status) => {
     let style = "";
     if (status === "activity") {
-      style = { backgroundColor: "#9DCDE1", color: "black", border: "none" ,borderRadius:"20px", marginTop:"5px"};
+      style = {
+        backgroundColor: "#9DCDE1",
+        color: "black",
+        border: "none",
+        borderRadius: "20px",
+        marginTop: "5px",
+      };
     } else if (status === "friend") {
       style = {
         backgroundColor: "#F8E16B",
         color: "black",
         border: "none",
         borderRadius: "20px",
-        marginTop:"5px"
+        marginTop: "5px",
       };
     } else if (status === "work") {
       style = {
@@ -85,13 +108,14 @@ function MainCRUD() {
         borderRadius: "20px",
         marginTop: "5px",
       };
-    } else style = {
-      backgroundColor: "white",
-      color: "black",
-      border: "none",
-      borderRadius: "20px",
-      marginTop: "5px",
-    };
+    } else
+      style = {
+        backgroundColor: "white",
+        color: "black",
+        border: "none",
+        borderRadius: "20px",
+        marginTop: "5px",
+      };
 
     return style;
   };
@@ -111,7 +135,12 @@ function MainCRUD() {
                 <Row gutter={10}>
                   <Col span={3} order={1}>
                     <Checkbox
-                      onChange={onChange}
+                      
+                      onChange={(e)=>{
+                        setCheckTask(task._id)
+                        handleChange(e)
+
+                      }}
                       style={{ marginTop: "15px", boxShadow: "black" }}
                     />
                   </Col>
@@ -134,16 +163,19 @@ function MainCRUD() {
                     {new Date(task.completedAt).toLocaleDateString("en-US")}
                   </Col>
                   <Col span={2} order={6} style={{ marginTop: "3px" }}>
-                    <Button shape="round" onEdit={onEdit}>
-                      edit
-                    </Button>
+                    <img
+                      src="https://i.im.ge/2022/12/12/d7HXBp.Screenshot-204.png"
+                      alt="Screenshot (204)"
+                      style={{ height: 30, marginTop: 3 }}
+                      onClick={{ onEdit }}
+                    />
                   </Col>
                   <Col span={2} order={6} style={{ marginTop: "3px" }}>
                     <img
                       src="https://i.im.ge/2022/12/12/d7E5I4.Screenshot-203.png"
                       alt="Screenshot (203)"
-                      style={{ height: 30, marginTop:3}}
-                      onClick={() => {
+                      style={{ height: 30, marginTop: 3 }}
+                      onClick={(e) => {
                         onDelete(task._id);
                       }}
                       delete
