@@ -13,7 +13,7 @@ function MainCRUD() {
   const [isCheckTask, setCheckTask] = useState(false);
 
   const getAllTodo = () => {
-    const url = "http://localhost:8000/tasks";
+    const url = "http://localhost:8000/uncompleted";
     axios
       .get(url)
       .then((response) => {
@@ -45,7 +45,7 @@ function MainCRUD() {
     };
 
     const response = await axios
-      .patch(`http://localhost:8000/tasks/${isCheckTask}`, checkBox)
+      .patch(`http://localhost:8000/update/${isCheckTask}`, checkBox)
       .then((res) => {
         console.log(res.data);
       });
@@ -135,32 +135,32 @@ function MainCRUD() {
                 <Row gutter={10}>
                   <Col span={3} order={1}>
                     <Checkbox
-                      
-                      onChange={(e)=>{
-                        setCheckTask(task._id)
-                        handleChange(e)
-
+                      onChange={(e) => {
+                        setCheckTask(task._id);
+                        handleChange(e);
                       }}
                       style={{ marginTop: "15px", boxShadow: "black" }}
                     />
                   </Col>
 
-                  <Col span={3} order={2} style={{ fontSize: "30px" }}>
+                  <Col span={7} order={2} style={{ fontSize: "25px" }}>
                     {task.title}
                   </Col>
 
                   <Col span={6} order={3}>
                     <Button shape="round" style={status_color(task.tag)}>
-                      {task.tag}
+                      {task.tag == "none" ? "" : task.tag}
                     </Button>
                   </Col>
 
                   <Col
-                    span={6}
+                    span={3}
                     order={3}
                     style={{ marginTop: "5px", fontSize: "20px" }}
                   >
-                    {new Date(task.completedAt).toLocaleDateString("en-US")}
+                    {task.completedAt == null
+                      ? ""
+                      : new Date(task.completedAt).toLocaleDateString()}
                   </Col>
                   <Col span={2} order={6} style={{ marginTop: "3px" }}>
                     <img
