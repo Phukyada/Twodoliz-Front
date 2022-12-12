@@ -1,0 +1,18 @@
+.tabHeader {
+  background-color: #eceac6;
+  height: 64px;
+  width: 2000 px;
+  
+
+}
+.textBar {
+  height: 36px;
+  width: 200 px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #363636;
+  font-weight: bold;
+}
