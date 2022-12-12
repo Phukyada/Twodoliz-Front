@@ -154,7 +154,7 @@ function CompleteTask() {
                 >
                   {task.completedAt == null
                     ? ""
-                    : new Date(task.completedAt).toLocaleDateString()}
+                    : new Date(task.completedAt).toLocaleDateString("en-GB")}
                 </Col>
                 
               </Row>

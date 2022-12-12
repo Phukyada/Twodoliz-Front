@@ -177,7 +177,7 @@ function MainCRUD({ logoutdata }) {
                   >
                     {task.completedAt == null
                       ? ""
-                      : new Date(task.completedAt).toLocaleDateString()}
+                      : new Date(task.completedAt).toLocaleDateString("en-GB")}
                   </Col>
                   <Col span={2} order={5} style={{ marginTop: "3px" }}>
                     <img
