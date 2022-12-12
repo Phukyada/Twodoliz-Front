@@ -1,99 +1,83 @@
 .register {
-    width: 945px;
-    height: 500px;
+    width: 1489.5px;
+    height: 745px;
     background: #E8E7CF;
-    border: 1px solid #dddfe2;
+    /* border: 1px solid #dddfe2;
     box-shadow:0 2px 4px rgb(0 0 0/ 10%), 0 8px 16px rgb(0 0 0 / 10%);
     border-radius: 8px;
     padding: 5rem;
-    align-items: center;
-    text-alignx: center;
+    align-items: center; */
+    text-align: center;
 }
-.username{
-    color: #514242;
-    font-size: 18px;
-    border-style: none;
-    margin-top: 10px;
-    margin-left: 300px;
-    margin-right: 60px;
-}
-.userInput{
-    border-radius: 20rem;
-    margin-left: 40px;
+.boxInput{
+    border-radius: 5rem;
+    /* margin-left: 400px; */
     border: none;
     box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
     padding: 10px;
-    width: 50%;
+    width: 30%;
+    color: #514242;
+    font-size: 16px;
+    text-align: center;
+}
+.input{
     color: #514242;
     font-size: 18px;
+    margin-top: 200px;
 }
-.email{
-    color: #514242;
-    font-size: 18px;
-    border-style: none;
-    margin-top: 10px;
-    margin-left: 300px;
-    margin-right: 60px;
+
+.al{
+    margin-left: -400px;
 }
-.emailInput{
-    border-radius: 20rem;
-    margin-left: 40px;
-    border: none;
-    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
-    padding: 10px;
-    width: 50%;
-    color: #514242;
-    font-size: 18px;
-}
-.password{
-    color: #514242;
-    font-size: 18px;
-    border-style: none;
-    margin-top: 10px;
-    margin-left: 300px;
-    margin-right: 60px;
-}
-.passwordInput{
-    border-radius: 20rem;
-    margin-left: 40px;
-    border: none;
-    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
-    padding: 10px;
-    width: 50%;
-    color: #514242;
-    font-size: 18px;
-}
+
 .signup {
     background: #8FAFBD;
-    margin: 30px 430px 60px;
-    border-radius: 15rem;
-    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
     border: none;
-    color: #514242;
-    font-size: 0.95rem;
-    padding:7px 2px;
-    width: 15%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5rem;
+    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
     outline: none;
-    cursor: pointer;
+    margin-top: 50px;
 }
-.register > .loginbt{
-    margin: -15px 680px 10px;
-    width: 100%;
-    font-size: 17px;
+.login{
+    font-size: 16px;
+    margin-left: 1000px;
+    margin-top: 50px;
 }
 .logbut{
     border-radius: 5rem;
     border: none;
     background: #E3E19E;
     box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
-    font-size: 0.95rem;
-    padding:7px 12px;
+    font-size: 16px;
+    padding: 10px;
     margin-left: 15px;
-
 }
 .header{
-    margin: -70px 150px 170px;
-    width: px;
+    /* margin: -70px 150px 170px; */
+    text-align: center;
     height: 30px;
+}
 
+a{
+    color: #514242;
+}
+
+button:active{
+    background-color: #319bc9;
+}
+
+a:visited{
+    color: #424242;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #efab37;
+    background-color: transparent;
 }
