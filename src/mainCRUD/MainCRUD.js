@@ -1,7 +1,6 @@
-import React, { useState, useEffect,message, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { Col, Checkbox, message } from "antd";
+import { Col, Checkbox ,message} from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header/hearder.js";
 import "./MainCRUD.css";
@@ -30,20 +29,20 @@ function MainCRUD() {
   };
 
   const [refreshing, setRefreshing] = useState(false);
-  const refresh = useCallback(() => {
+  const refresh = () => {
     setRefreshing(true);
     getAllTodo();
     setRefreshing(false);
-  });
-  
+  };
+
   const onRefresh = useCallback(() => {
     refresh();
-  }, [refresh]);
+  }, []);
 
   useEffect(() => {
     getAllTodo();
     refresh();
-  }, [onRefresh, refresh]);
+  }, [onRefresh]);
 
 
 
@@ -150,7 +149,7 @@ function MainCRUD() {
                 <Row gutter={10}>
                   <Col span={3} order={1}>
                     <Checkbox
-                      onChange ={(e) => {
+                      onChange={(e) => {
                         console.log(e);
                         checkChange(e, task._id);
                       }}
