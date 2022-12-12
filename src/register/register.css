@@ -8,6 +8,9 @@
     padding: 5rem;
     align-items: center; */
     text-align: center;
+    background-image: url('https://i.im.ge/2022/12/12/d5oxGF.pagebg.png');
+    background-size: contain;
+    background-position: center;
 }
 
 .boxInput {
