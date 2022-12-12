@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header/hearder.js";
 import "./createTask.css";
-import { Form, Row, Col, Button, Input, DatePicker, Radio } from "antd";
+import { Form, Row, Col, Button, Input, DatePicker, Radio, message } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import { PlusCircleFilled } from "@ant-design/icons";
 import axios from "axios";
@@ -33,8 +33,10 @@ const CreateTask = () => {
       .post("http://localhost:8000/tasks", data)
       .then((response) => {
         console.log(response.data);
+        message.success(`Create Task successfully`)
       });
   };
+
 
   return (
     <div>

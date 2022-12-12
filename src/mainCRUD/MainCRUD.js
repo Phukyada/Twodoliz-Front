@@ -30,22 +30,27 @@ function MainCRUD() {
       });
   };
 
+
+
   useEffect(() => {
     getAllTodo();
   }, []);
 
-  const handleChange = async (e, task_id) => {
+  const checkChange = async (e, task_id) => {
+    console.log(`${e.target.checked}`);
     const checkBox = {
       title: toDo.title,
       detail: toDo.detail,
-      completed: e.target.value,
+      completed: `${e.target.checked}`,
       completedAt: toDo.datePicker,
       tag: toDo.tag,
       hasCompletedDate: toDo.datePicker,
     };
 
-    const response = await axios
-      .patch(`http://localhost:8000/update/${isCheckTask}`, checkBox)
+    const res = await axios
+      .patch(`http://localhost:8000/tasks/${task_id}`, {
+        completed: `${e.target.checked}`
+      })
       .then((res) => {
         console.log(res.data);
       });
@@ -135,9 +140,9 @@ function MainCRUD() {
                 <Row gutter={10}>
                   <Col span={3} order={1}>
                     <Checkbox
-                      onChange={(e) => {
-                        setCheckTask(task._id);
-                        handleChange(e);
+                      onChange ={(e) => {
+                        console.log(e);
+                        checkChange(e, task._id);
                       }}
                       style={{ marginTop: "15px", boxShadow: "black" }}
                     />
@@ -155,14 +160,14 @@ function MainCRUD() {
 
                   <Col
                     span={3}
-                    order={3}
+                    order={4}
                     style={{ marginTop: "5px", fontSize: "20px" }}
                   >
                     {task.completedAt == null
                       ? ""
                       : new Date(task.completedAt).toLocaleDateString()}
                   </Col>
-                  <Col span={2} order={6} style={{ marginTop: "3px" }}>
+                  <Col span={2} order={5} style={{ marginTop: "3px" }}>
                     <img
                       src="https://i.im.ge/2022/12/12/d7HXBp.Screenshot-204.png"
                       alt="Screenshot (204)"
@@ -170,7 +175,7 @@ function MainCRUD() {
                       onClick={{ onEdit }}
                     />
                   </Col>
-                  <Col span={2} order={6} style={{ marginTop: "3px" }}>
+                  <Col span={2} order={5} style={{ marginTop: "3px" }}>
                     <img
                       src="https://i.im.ge/2022/12/12/d7E5I4.Screenshot-203.png"
                       alt="Screenshot (203)"

@@ -9,7 +9,7 @@ function CompleteTask() {
   const [complete, setComplete] = useState([]);
 
   const getCompleteTodo = () => {
-    const url = "http://localhost:8000/tasks";
+    const url = "http://localhost:8000/completed";
     axios
       .get(url)
       .then((response) => {
@@ -121,7 +121,7 @@ function CompleteTask() {
                 <Col
                   span={6}
                   order={3}
-                  style={{ fontSize: "20px", marginLeft: 60, marginTop: 2 }}
+                  style={{ fontSize: "20px", marginLeft: 60, marginTop: 7 }}
                 >
                   {task.completedAt == null
                     ? ""
