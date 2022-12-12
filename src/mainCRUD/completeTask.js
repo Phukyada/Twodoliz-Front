@@ -125,44 +125,38 @@ function CompleteTask() {
         {complete.map((task, index) => (
           <div key={index}>
             <div className="wbox">
-              <Row gutter={20}>
+              <Row gutter={10}>
                 <Col span={3} order={1}>
                   <Checkbox
-
                     onChange={(e) => {
                       console.log(e);
                       checkChange(e, task._id);
                     }}
-                    style={{ marginTop: "15px", boxShadow: "black" }}
+                    style={{ marginTop: "15px", boxShadow: "black",marginLeft:50}}
+                    checked={task.completed}
                   />
                 </Col>
-                <Col
-                  span={6}
-                  order={1}
-                  style={{ fontSize: "30px", marginLeft: 60 }}
-                >
+
+                <Col span={7} order={2} style={{ fontSize: "25px" }}>
                   {task.title}
                 </Col>
 
-                <Col
-                  span={6}
-                  order={2}
-                  style={{ fontSize: "25px", marginLeft: 60, marginTop: -1 }}
-                >
+                <Col span={6} order={3}>
                   <Button shape="round" style={status_color(task.tag)}>
                     {task.tag == "none" ? "" : task.tag}
                   </Button>
                 </Col>
 
                 <Col
-                  span={6}
-                  order={3}
-                  style={{ fontSize: "20px", marginLeft: 60, marginTop: 7 }}
+                  span={3}
+                  order={4}
+                  style={{ marginTop: "5px", fontSize: "20px" }}
                 >
                   {task.completedAt == null
                     ? ""
                     : new Date(task.completedAt).toLocaleDateString()}
                 </Col>
+                
               </Row>
             </div>
           </div>

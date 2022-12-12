@@ -149,6 +149,7 @@ function MainCRUD() {
                 <Row gutter={10}>
                   <Col span={3} order={1}>
                     <Checkbox
+                    
                       onChange={(e) => {
                         console.log(e);
                         checkChange(e, task._id);
@@ -162,7 +163,7 @@ function MainCRUD() {
                     {task.title}
                   </Col>
 
-                  <Col span={6} order={3}>
+                  <Col span={6} order={3} >
                     <Button shape="round" style={status_color(task.tag)}>
                       {task.tag == "none" ? "" : task.tag}
                     </Button>
