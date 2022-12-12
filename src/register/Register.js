@@ -9,7 +9,7 @@ import "./register.css"
     <div className="register">
       
       <div className="header">
-        <img src="https://i.im.ge/2022/12/12/d7PZHh.TwoDuLiz.png" />
+        <img src="https://i.im.ge/2022/12/12/dipNnW.logo2dliz.png" />
       </div>
       
       <div className = "username">
