@@ -42,7 +42,7 @@ const Register = () => {
         </div>
         <Form
           form={form}
-          // onFinish={onFinish}
+          onFinish={onFinish}
         >
           <div className="input">
             <div className="al">

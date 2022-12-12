@@ -40,7 +40,6 @@ function Login() {
       .then((response) => {
         if(response.data.token){
           localStorage.setItem("token", response.data.token);
-          localStorage.setItem("user", response.data.user);
           window.location.href = "/home";
         }
       });
@@ -50,7 +49,7 @@ function Login() {
     <>
       <Form
         form={form}
-        // onFinish={onFinish}
+        onFinish={onFinish}
       >
         <Row>
           <Col span={12} className="col-1">
@@ -94,7 +93,7 @@ function Login() {
             </div>
 
             <div className="login-bt">
-              <button class="button1" onClick={onFinish}> Log in </button>
+              <button class="button1" onFinish={onFinish}> Log in </button>
             </div>
 
             <div className="signup-bt">
