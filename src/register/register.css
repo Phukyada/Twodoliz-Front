@@ -1,0 +1,93 @@
+.register {
+    width: 1440;
+    height: 1024;
+    background: #E8E7CF;
+    border: 1px solid #dddfe2;
+    box-shadow:0 2px 4px rgb(0 0 0/ 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 8px;
+    padding: 5rem;
+    align-items: center;
+    text-align: center;
+}
+.username{
+    color: #151414;
+    font-size: 18px;
+    border-style: none;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 90px;
+}
+.userInput{
+    border-radius: 17rem;
+    margin-left: 180px;
+    border: none;
+    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
+    padding: 10px;
+    width: 35%;
+    color: #424242;
+    font-size: 18px;
+}
+.email{
+    color: #151414;
+    font-size: 18px;
+    border-style: none;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 90px;
+}
+.emailInput{
+    border-radius: 17rem;
+    margin-left: 180px;
+    border: none;
+    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
+    padding: 10px;
+    width: 35%;
+    color: #424242;
+    font-size: 18px;
+}
+.password{
+    color: #151414;
+    font-size: 18px;
+    border-style: none;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 90px;
+}
+.passwordInput{
+    border-radius: 17rem;
+    margin-left: 180px;
+    border: none;
+    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
+    padding: 10px;
+    width: 35%;
+    color: #424242;
+    font-size: 18px;
+}
+.signup {
+    background: #8FAFBD;
+    margin: 30px 460px 60px;
+    border-radius: 15rem;
+    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
+    border: none;
+    color: #424242;
+    font-size: 0.95rem;
+    padding:7px 2px;
+    width: 14%;
+    outline: none;
+    cursor: pointer;
+}
+.register > .loginbt{
+    margin: 20px 300px 10px;
+    width: 100%;
+    font-size: 17px;
+}
+.logbut{
+    border-radius: 15rem;
+    box-shadow: 5px 5px 5px -5px rgba(54,48,48,0.75);
+    background: #E3E19E;
+    font-size: 0.95rem;
+    padding:7px 12px;
+}
+.header{
+    border: 100;
+}
