@@ -28,21 +28,21 @@ function MainCRUD() {
       });
   };
 
-  const [refreshing, setRefreshing] = useState(false);
-  const refresh = () => {
-    setRefreshing(true);
-    getAllTodo();
-    setRefreshing(false);
-  };
+  // const [refreshing, setRefreshing] = useState(false);
+  // const refresh = () => {
+  //   setRefreshing(true);
+  //   getAllTodo();
+  //   setRefreshing(false);
+  // };
 
-  const onRefresh = useCallback(() => {
-    refresh();
-  }, []);
+  // const onRefresh = useCallback(() => {
+  //   refresh();
+  // }, []);
 
   useEffect(() => {
     getAllTodo();
-    refresh();
-  }, [onRefresh]);
+    // refresh();
+  }, []);
 
 
 
