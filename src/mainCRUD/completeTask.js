@@ -26,7 +26,7 @@ function CompleteTask() {
         console.log(err);
       });
   };
-  
+
   useEffect(() => {
     getCompleteTodo();
   }, []);
@@ -49,10 +49,12 @@ function CompleteTask() {
       .then((res) => {
         console.log(res.data);
         message.success(`Uncompleted Task`);
+      }).then(() => {
+        getCompleteTodo();
       });
   };
 
-  
+
 
   const status_color = (status) => {
     let style = "";
@@ -132,7 +134,7 @@ function CompleteTask() {
                       console.log(e);
                       checkChange(e, task._id);
                     }}
-                    style={{ marginTop: "15px", boxShadow: "black",marginLeft:50}}
+                    style={{ marginTop: "15px", boxShadow: "black", marginLeft: 50 }}
                     checked={task.completed}
                   />
                 </Col>
@@ -143,7 +145,7 @@ function CompleteTask() {
 
                 <Col span={6} order={3}>
                   <Button shape="round" style={status_color(task.tag)}>
-                    {task.tag == "none" ? "" : task.tag}
+                    {task.tag === "none" ? "" : task.tag}
                   </Button>
                 </Col>
 
@@ -156,7 +158,7 @@ function CompleteTask() {
                     ? ""
                     : new Date(task.completedAt).toLocaleDateString("en-GB")}
                 </Col>
-                
+
               </Row>
             </div>
           </div>

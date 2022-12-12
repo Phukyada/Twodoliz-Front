@@ -28,24 +28,13 @@ function MainCRUD({ logoutdata }) {
         console.log(err);
       });
   };
-
-  // const [refreshing, setRefreshing] = useState(false);
-  // const refresh = () => {
-  //   setRefreshing(true);
-  //   getAllTodo();
-  //   setRefreshing(false);
-  // };
-
-  // const onRefresh = useCallback(() => {
-  //   refresh();
-  // }, []);
-
   useEffect(() => {
     getAllTodo();
-    // refresh();
   }, []);
 
-
+  const fetchAllTodo = useCallback(() => {
+    getAllTodo();
+  }, []);
 
   const checkChange = async (e, task_id) => {
     console.log(`${e.target.checked}`);
@@ -65,6 +54,9 @@ function MainCRUD({ logoutdata }) {
       .then((res) => {
         console.log(res.data);
         message.success(`Completed Task`);
+      })
+      .then(() => {
+        fetchAllTodo();
       });
   };
 
