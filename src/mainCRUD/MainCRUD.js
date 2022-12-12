@@ -66,8 +66,10 @@ function MainCRUD({ logoutdata }) {
       .then((res) => {
         console.log(res.data);
         message.success(`Deleted Task`);
-      }
-      )
+      })
+      .then(() => {
+        fetchAllTodo();
+      });
   };
 
   const status_color = (status) => {
