@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header/hearder.js";
-import { Col } from "antd";
+import { Col, Checkbox, message } from "antd";
 import { Button, Row } from "react-bootstrap";
 
 function CompleteTask() {
+  const [toDo, setTodo] = useState([]);
+
   const [complete, setComplete] = useState([]);
 
   const getCompleteTodo = () => {
@@ -24,6 +26,34 @@ function CompleteTask() {
         console.log(err);
       });
   };
+  
+  useEffect(() => {
+    getCompleteTodo();
+  }, []);
+
+  const checkChange = async (e, task_id) => {
+    console.log(`${e.target.checked}`);
+    const checkBox = {
+      title: toDo.title,
+      detail: toDo.detail,
+      completed: `${e.target.checked}`,
+      completedAt: toDo.datePicker,
+      tag: toDo.tag,
+      hasCompletedDate: toDo.datePicker,
+    };
+
+    const res = await axios
+      .patch(`http://localhost:8000/tasks/${task_id}`, {
+        completed: !`${e.target.checked}`,
+      })
+      .then((res) => {
+        console.log(res.data);
+        message.success(`Uncompleted Task`);
+      });
+  };
+
+  
+
   const status_color = (status) => {
     let style = "";
     if (status === "activity") {
@@ -81,10 +111,6 @@ function CompleteTask() {
     return style;
   };
 
-  useEffect(() => {
-    getCompleteTodo();
-  }, []);
-
   return (
     <div>
       <div>
@@ -100,6 +126,16 @@ function CompleteTask() {
           <div key={index}>
             <div className="wbox">
               <Row gutter={20}>
+                <Col span={3} order={1}>
+                  <Checkbox
+
+                    onChange={(e) => {
+                      console.log(e);
+                      checkChange(e, task._id);
+                    }}
+                    style={{ marginTop: "15px", boxShadow: "black" }}
+                  />
+                </Col>
                 <Col
                   span={6}
                   order={1}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Col, Checkbox } from "antd";
+import { Col, Checkbox, message } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header/hearder.js";
 import "./MainCRUD.css";
@@ -10,7 +10,6 @@ import { Button, Row } from "react-bootstrap";
 
 function MainCRUD() {
   const [toDo, setTodo] = useState([]);
-  const [isCheckTask, setCheckTask] = useState(false);
 
   const getAllTodo = () => {
     const url = "http://localhost:8000/uncompleted";
@@ -49,15 +48,12 @@ function MainCRUD() {
 
     const res = await axios
       .patch(`http://localhost:8000/tasks/${task_id}`, {
-        completed: `${e.target.checked}`
+        completed: `${e.target.checked}`,
       })
       .then((res) => {
         console.log(res.data);
+        message.success(`Completed Task`);
       });
-  };
-
-  const onEdit = (e) => {
-    console.log(`checked = ${e.target.checked}`);
   };
 
   const onDelete = async (task_id) => {
@@ -65,6 +61,7 @@ function MainCRUD() {
       .delete(`http://localhost:8000/tasks/${task_id}`)
       .then((res) => {
         console.log(res.data);
+        message.success(`Daleted Task`);
       });
   };
 
@@ -172,7 +169,6 @@ function MainCRUD() {
                       src="https://i.im.ge/2022/12/12/d7HXBp.Screenshot-204.png"
                       alt="Screenshot (204)"
                       style={{ height: 30, marginTop: 3 }}
-                      onClick={{ onEdit }}
                     />
                   </Col>
                   <Col span={2} order={5} style={{ marginTop: "3px" }}>
