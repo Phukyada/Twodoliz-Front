@@ -31,6 +31,7 @@ const Register = () => {
         console.log(response.data);
         message.success(`Create User successfully`)
       });
+    form.resetFields();
   };
 
   return (

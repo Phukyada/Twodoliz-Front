@@ -14,19 +14,19 @@ function Login() {
         <Col span={12} className="col-1">
           <div>
             <div className="logo">
-              <img src="https://i.im.ge/2022/12/11/dqez5y.logoo.png" border="0"/>
+              <img src="https://i.im.ge/2022/12/11/dqez5y.logoo.png" border="0" />
             </div>
           </div>
         </Col>
         <Col span={12} className="col-2">
           <div className="username">
             <ul> Username </ul>
-            <input type="" className="userinput"/>
+            <input type="" className="userinput" />
           </div>
 
           <div className="password">
             <ul> Password </ul>
-            <input type="password" className="passwordinput"/>
+            <input type="password" className="passwordinput" />
           </div>
 
           <div className="login-bt">
