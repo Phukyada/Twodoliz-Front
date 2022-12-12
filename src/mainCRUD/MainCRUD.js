@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,message, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Col, Checkbox } from "antd";
@@ -30,11 +30,23 @@ function MainCRUD() {
       });
   };
 
-
+  const [refreshing, setRefreshing] = useState(false);
+  const refresh = useCallback(() => {
+    setRefreshing(true);
+    getAllTodo();
+    setRefreshing(false);
+  });
+  
+  const onRefresh = useCallback(() => {
+    refresh();
+  }, [refresh]);
 
   useEffect(() => {
     getAllTodo();
-  }, []);
+    refresh();
+  }, [onRefresh, refresh]);
+
+
 
   const checkChange = async (e, task_id) => {
     console.log(`${e.target.checked}`);
@@ -65,6 +77,7 @@ function MainCRUD() {
       .delete(`http://localhost:8000/tasks/${task_id}`)
       .then((res) => {
         console.log(res.data);
+        message.success(`Create Task successfully`)
       });
   };
 
@@ -145,6 +158,7 @@ function MainCRUD() {
                         checkChange(e, task._id);
                       }}
                       style={{ marginTop: "15px", boxShadow: "black" }}
+                      checked={task.completed}
                     />
                   </Col>
 
