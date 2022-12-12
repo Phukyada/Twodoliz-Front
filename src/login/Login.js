@@ -9,7 +9,7 @@ import axios from "axios";
 // import MainCRUD from "./mainCRUD/MainCRUD";
 
 
-function Login() {
+function Login({ logindata }) {
   const [form] = Form.useForm();
 
   const handleChange = (e) => {
@@ -21,6 +21,8 @@ function Login() {
     email: "",
     password: "",
   });
+  
+  let navigate = useNavigate();
 
   const onFinish = async (e) => {
     console.log(e);
@@ -38,9 +40,12 @@ function Login() {
       })
       //if can post
       .then((response) => {
-        if(response.data.token){
+        if (response.data.token) {
           localStorage.setItem("token", response.data.token);
-          window.location.href = "/home";
+          // window.location.href = "/home";
+          message.success(`Login success`)
+          logindata();
+          navigate("/home");
         }
       });
   };

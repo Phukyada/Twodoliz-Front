@@ -2,9 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Nav } from "react-bootstrap";
+import { Navigate } from "react-router-dom";
 
 import "./header.css";
-function Header() {
+function Header({ logoutdata }) {
   <link
     href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap"
     rel="stylesheet"
@@ -30,6 +31,7 @@ function Header() {
               border="0"
               style={{ marginTop: 7 }}
               onClick={() => navigate("/home")}
+
             />
           </nav>
 
@@ -58,7 +60,10 @@ function Header() {
               marginTop: 15,
               marginLeft: 650,
             }}
-            onClick={() => navigate("/")}
+            onClick={() => {
+              //refresh page
+              window.location.reload();
+            }}
           ></img>
         </Nav>
       </div>

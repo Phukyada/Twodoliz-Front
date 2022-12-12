@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { Col, Checkbox ,message} from "antd";
+import { Col, Checkbox, message } from "antd";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header/hearder.js";
 import "./MainCRUD.css";
 
 import { Button, Row } from "react-bootstrap";
 
-function MainCRUD() {
+function MainCRUD({ logoutdata }) {
 
   const [toDo, setTodo] = useState([]);
 
@@ -150,7 +150,7 @@ function MainCRUD() {
                 <Row gutter={10}>
                   <Col span={3} order={1}>
                     <Checkbox
-                    
+
                       onChange={(e) => {
                         console.log(e);
                         checkChange(e, task._id);
