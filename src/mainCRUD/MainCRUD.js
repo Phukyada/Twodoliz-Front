@@ -129,13 +129,6 @@ function MainCRUD({ logoutdata }) {
     return style;
   };
 
-  const textDetail = (text) =>{
-    let textTodo = ""
-    if (text !="")
-    textTodo = "detail: "+ text;
-
-    return
-  }
 
   return (
     <div>
