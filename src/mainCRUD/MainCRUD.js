@@ -129,6 +129,14 @@ function MainCRUD({ logoutdata }) {
     return style;
   };
 
+  const textDetail = (text) =>{
+    let textTodo = ""
+    if (text !="")
+    textTodo = "detail: "+ text;
+
+    return
+  }
+
   return (
     <div>
       <div>
@@ -144,7 +152,6 @@ function MainCRUD({ logoutdata }) {
                 <Row gutter={10}>
                   <Col span={3} order={1}>
                     <Checkbox
-
                       onChange={(e) => {
                         console.log(e);
                         checkChange(e, task._id);
@@ -158,9 +165,9 @@ function MainCRUD({ logoutdata }) {
                     {task.title}
                   </Col>
 
-                  <Col span={6} order={3} >
+                  <Col span={6} order={3}>
                     <Button shape="round" style={status_color(task.tag)}>
-                      {task.tag == "none" ? "" : task.tag}
+                      {task.tag === "none" ? "" : task.tag}
                     </Button>
                   </Col>
 
@@ -191,6 +198,9 @@ function MainCRUD({ logoutdata }) {
                       delete
                     ></img>
                   </Col>
+                </Row>
+                <Row style={{ fontSize: "20px" ,marginLeft:-500}}>
+                  <div> {task.detail ? "detail : " + task.detail : ""}</div>
                 </Row>
               </div>
             </div>
