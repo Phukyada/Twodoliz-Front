@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Col, Checkbox, message } from "antd";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./header/hearder.js";
 import "./MainCRUD.css";
 
